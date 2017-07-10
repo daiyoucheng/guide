@@ -1,13 +1,20 @@
 var login = {
     loginClick: function () {
         $("#login").click(function () {
-            debugger;
             if($("#usrname").val() ==""|| $("#password").val() ==""){
                 $("#spanReminde").html("账户或密码不能为空");
                 return;
             }
+
+            var param = {
+                username:$("#usrname").val(),
+                password: $("#password").val()
+            }
             $.ajax({
-                type: "POST",
+                type: "post",
+                data:JSON.stringify(param),
+                dataType: 'json',
+                contentType: "application/json",
                 url: "/login/longinSearch",
                 success: function(msg){
                     alert( "Data Saved: " + msg );

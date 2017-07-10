@@ -25,4 +25,3 @@ mybatis:
   mapper-locations: classpath*:com/example/dao/mapper/*.xml
 server:
    port: 8081
-   context-path: /base-example/
